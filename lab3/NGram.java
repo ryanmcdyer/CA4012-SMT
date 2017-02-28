@@ -20,7 +20,7 @@ public class NGram {
 
       for(int i = 0; i < sArr.length - n + 1 ; i++) {//0 1 2 3 4
         for(int j = i; j < i + n; j++) {//j=2, 012, 123, 234
-          tmpStr += sArr[j] + " ";
+          tmpStr += sArr[j].toLowerCase() + " ";
         }
         ll.add(tmpStr.trim());
         tmpStr = "";
