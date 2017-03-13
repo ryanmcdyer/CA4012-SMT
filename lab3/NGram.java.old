@@ -1,3 +1,5 @@
+package ryanmcdyer.smt;
+
 import java.util.*;
 
 public class NGram {
@@ -19,7 +21,7 @@ public class NGram {
       tmpStr = "";
 
       for(int i = 0; i < sArr.length - n + 1 ; i++) {//0 1 2 3 4
-        for(int j = i; j < i + n; j++) {//j=2, 012, 123, 234
+        for(int j = i; j < i + n; j++) {//j=2 : 012, 123, 234 etc
           tmpStr += sArr[j].toLowerCase() + " ";
         }
         ll.add(tmpStr.trim());
@@ -31,6 +33,11 @@ public class NGram {
     }
 
     return output;
+  }
+
+  public static LinkedList<String> getNGram(int n, String s) {
+    HashMap<Integer, LinkedList<String>> map = getNgrams(s);
+    return map.get(n);
   }
 
   public static void main(String[] args) {

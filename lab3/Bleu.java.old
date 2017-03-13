@@ -1,3 +1,5 @@
+package ryanmcdyer.smt;
+
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -24,13 +26,13 @@ public class Bleu {
   }
 
   private static double precisionForAllNgrams(LinkedList<String> refs, String out) {
-    //HashMap<Integer, LinkedList<String>> refGrams = new HashMap<Integer, LinkedList<String>>;
+    //HashMap<Integer, LinkedList<String>> refGrams = new HashMap<Integer, LinkedList<String>>();
 
     LinkedList<HashMap <String, LinkedList<String>>> refGrams = new LinkedList<>();
 
 
     for(String s : refs) {
-      refGrams.add(NGram.getNgrams(s));
+      //refGrams.add(NGram.getNgrams(s));
     }
 
     HashMap<Integer, LinkedList<String>> outGrams = NGram.getNgrams(out);
@@ -43,7 +45,8 @@ public class Bleu {
 
     for(int i = 1; i <= Collections.max(outGrams.keySet()) + 1; i++) {
 
-      tmpRef = refGrams.get(i-1);
+      //tmpRef = refGrams.get(i-1);
+      tmpRef = outGrams.get(i-1);
       tmpOut = outGrams.get(i-1);
 
       count = 0;
