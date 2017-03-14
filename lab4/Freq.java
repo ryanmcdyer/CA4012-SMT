@@ -60,10 +60,15 @@ public class Freq {
 
         System.out.println(n + "grams: ");
         for(String s : nGrams) {
-          System.out.print(s + " || ");
+          System.out.print(s + ", ");
         }
 
+        
+
+
       //}
+
+
   }
 }
 
